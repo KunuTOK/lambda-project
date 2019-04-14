@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "build": "yarn build:functions",
+    "build:functions": "yarn netlify-lambda build functions"
+  },
   "dependencies": {
     "netlify-lambda": "^1.4.3"
   }
