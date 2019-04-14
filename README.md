@@ -1,1 +1,5 @@
-<h1>  hello world </h1>
+# Example
+
+    yarn start
+
+and open http://localhost:9000/hello

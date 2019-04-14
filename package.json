@@ -1,5 +1,7 @@
 {
   "scripts": {
+    "start": "yarn start:functions",
+    "start:functions": "yarn netlify-lambda serve functions",
     "build": "yarn build:functions",
     "build:functions": "yarn netlify-lambda build functions"
   },
