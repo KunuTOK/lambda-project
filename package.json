@@ -7,5 +7,6 @@
   },
   "dependencies": {
     "netlify-lambda": "^1.4.3"
-  }
+  },
+  "version": "0.0.0"
 }
