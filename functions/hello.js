@@ -1,6 +1,6 @@
 exports.handler = function(event, context, callback) {
   callback(null, {
     statusCode: 200,
-    body: "Hello epta " + new Date()
+    body: "Hello 123 " + new Date()
   });
 };
