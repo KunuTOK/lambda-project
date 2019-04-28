@@ -1,13 +1,15 @@
 exports.handler = function(event, context, callback) {
-const body = JSON.parse(event.body);
- console.log(body.message.text);
+
+  const req = JSON.parse(event.body);
+  console.log(req.message.text);
   var payload = {
-   method: "sendMessage",
-   chat_id: "@kunutok",
-    text:"testing reply " + body.message.text + " " + Data = new Date(),
-   parse_mode: "HTML"
+    method: "sendMessage",
+    chat_id: req.message.chat.id,
+    text: "testing reply " + req.message.chat.id + " " + new Date(),
+    parse_mode: "HTML"
   };
-    callback(null, {
+
+  callback(null, {
     statusCode: 200,
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload)
