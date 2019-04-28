@@ -5,7 +5,7 @@ exports.handler = function(event, context, callback) {
   var payload = {
     method: "sendMessage",
     chat_id: req.message.chat.id,
-    text: "testing reply " + req.message.chat.id + " " + new Date(),
+    text: "testing reply " + req.message.chat.first_name + " " + new Date(),
     parse_mode: "HTML"
   };
 
