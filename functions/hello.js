@@ -1,11 +1,11 @@
 exports.handler = function(event, context, callback) {
 const body = JSON.parse(event.body);
-//  console.log(body.message.text);
+ console.log(body.message.text);
   var payload = {
-  //  method: "sendMessage",
-  // chat_id: "@kunutok",
-    text: "testing reply " + body.message.text + " " + Data = new Date(),
-//    parse_mode: "HTML"
+   method: "sendMessage",
+   chat_id: "@kunutok",
+    text:"testing reply " + body.message.text + " " + Data = new Date(),
+   parse_mode: "HTML"
   };
     callback(null, {
     statusCode: 200,
