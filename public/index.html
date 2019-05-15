@@ -1,95 +1,14 @@
 <body>
   <h1>Hello World</h1>
-  <script>
-    document.querySelector("h1").innerText = "Today " + new Date();
+    <script>
+      var kst = new Date().toLocaleString("en-US", {timeZone: "Europe/Moscow"});
+      kst = new Date(kst);
+      console.log('Kostroma time: '+kst.toLocaleString())
+      document.write('Kostroma time: '+kst.toLocaleString())
+ document.write('<====>')
+ var y = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
+ y = new Date(y);
+ console.log('San Francisco time: '+y.toLocaleString())
+ document.write('San Francisco time: '+y.toLocaleString())
     </script>
-    <head>
-        <script type="text/javascript">
-   function startTime()
-{
-var tm=new Date();
-var h=tm.getHours();
-var m=tm.getMinutes();
-var s=tm.getSeconds();
-m=checkTime(m);
-s=checkTime(s);
-document.getElementById('txt').innerHTML=h+":"+m+":"+s;
-t=setTimeout('startTime()',500);
-}
-function checkTime(i)
-{
-if (i<10)
-{
-i="0" + i;
-}
-return i;
-}
-</script>
-    </head> <body onload="startTime()"> <h1> <p id="txt"></p> </h1>
-
-      <head>
-        <title>Untitled</title>
-        <meta charset="utf-8">
-        <style type="text/css">
-        </style>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-        <script>
-      $(function() {
-        var obj = {timeZone:"Europe/Moscow"}, timer, tz = window.localStorage.getItem("tz") || 0;
-        function tic() {
-          var date = new Date;
-          $(".tik-tak-wrp-tab.active span").text(date.toLocaleTimeString("ru", obj));
-          timer = window.setTimeout(tic, 1000);
-        }
-        tic();
-        var tabs = $("#tik-tak-tabs .tik-tak-tab"), cont = $("#tik-tak-tabs .tik-tak-wrp-tab");
-        $("#tik-tak-tabs").on("click", ".tik-tak-tab", function() {
-          tabs.removeClass("active");
-          cont.removeClass("active");
-          var indx = $(this).index();
-          window.localStorage.setItem("tz",indx);
-          cont.eq(indx).addClass("active");
-          obj.timeZone = $(this).addClass("active").data("timezone");
-          window.clearTimeout(timer);
-          tic();
-          return false;
-        });
-        tabs.eq(tz).trigger("click");
-      });
-        </script>
-      </head>
-
-      <body>
-      <style>#tik-tak-tabs .tik-tak-select>span {
-        display: inline-block;
-        margin: 0 10px 30px 0;
-        cursor: pointer;
-      }
-
-      #tik-tak-tabs .tik-tak-wrp .tik-tak-wrp-tab>i {
-        display: block;
-        margin-top: 2px;
-      }
-
-      #tik-tak-tabs .tik-tak-wrp .tik-tak-wrp-tab {
-        display: none;
-      }
-
-      #tik-tak-tabs .tik-tak-wrp .tik-tak-wrp-tab.active {
-        display: block;
-      }
-      </style>
-      <div id="tik-tak-tabs">
-        <div class="tik-tak-select">
-         <span class="tik-tak-tab tik-tak-moscow" data-timeZone="Europe/Moscow">Москва</span>
-          <span class="tik-tak-tab tik-tak-Los_Angeles" data-timeZone="America/Los_Angeles">Сан Франциско</span>
-        </div>
-        <span class="tik-tak-wrp">
-          <div class="tik-tak-wrp-tab active"><span id="tik-tak-moscow"></span><i>Москва</i></div>
-          <div class="tik-tak-wrp-tab"><span id="tik-tak-Los_Angeles"></span><i>Сан Франциско</i></div>
-          </span>
-      </div>
-      </body>
-    </body>
 </body>
