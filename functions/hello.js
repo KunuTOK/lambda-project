@@ -9,7 +9,7 @@ exports.handler = function(event, context, callback) {
   var payload = {
     method: "sendMessage",
     chat_id: req.message.chat.id,
-    text: req.message.chat.username + " exact time:\n" + "Kostroma: " + kst.toLocaleString()+ "" +'\n' + "San Francisco: "+ y.toLocaleString(),
+    text: " Exact time:\n" + "Kostroma: " + kst.toLocaleString()+ "" +'\n' + "San Francisco: "+ y.toLocaleString(),
     parse_mode: "HTML"
   };
   callback(null, {
