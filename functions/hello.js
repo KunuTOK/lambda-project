@@ -14,7 +14,7 @@ exports.handler = function(event, context, callback) {
   };
   var payload = {
     method: "sendMessage",
-    chat_id: req.message.text(/\/sanfran/),
+    chat_id: req.message.text("/sanfran"),
     text: " Exact time:\n" + "San Francisco: " + sf.toLocaleString(),
     parse_mode: "HTML"
   };
