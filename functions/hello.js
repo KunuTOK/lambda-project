@@ -4,12 +4,18 @@ exports.handler = function(event, context, callback) {
   console.log(req.message.text);
   var kst = new Date().toLocaleString("en-US", {timeZone: "Europe/Moscow"});
   kst = new Date(kst);
-  var y = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
-  y = new Date(y);
+  var sf = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
+  y = new Date(sf);
   var payload = {
     method: "sendMessage",
-    chat_id: req.message.chat.id,
-    text: " Exact time:\n" + "Kostroma: " + kst.toLocaleString()+ "" +'\n' + "San Francisco: "+ y.toLocaleString(),
+    chat_id: req.message.text('/kostroma'),
+    text: " Exact time:\n" + "Kostroma: " + kst.toLocaleString(),
+    parse_mode: "HTML"
+  };
+  var payload = {
+    method: "sendMessage",
+    chat_id: req.message.text('/sanfran'),
+    text: " Exact time:\n" + "San Francisco: "sf y.toLocaleString(),
     parse_mode: "HTML"
   };
   callback(null, {
