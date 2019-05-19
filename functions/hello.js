@@ -7,7 +7,7 @@ exports.handler = function(event, context, callback) {
   var sf = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
   y = new Date(sf);
   var payload = {
-    method: "sendMessage",
+    method: "sendMessage(/kostroma)",
     chat_id: req.message.chat.id,
     text: " Exact time:\n" + "Kostroma: " + kst.toLocaleString(),
     parse_mode: "HTML"
