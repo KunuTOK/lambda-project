@@ -8,7 +8,7 @@ exports.handler = function(event, context, callback) {
   y = new Date(sf);
   var payload = {
     method: "sendMessage",
-    chat_id: req.message.text(kostroma),
+    chat_id: req.message.chat.id,
     text: " Exact time:\n" + "Kostroma: " + kst.toLocaleString(),
     parse_mode: "HTML"
   };
