@@ -6,12 +6,18 @@ exports.handler = function(event, context, callback) {
   kst = new Date(kst);
   var sf = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
   y = new Date(sf);
-  var payload = {
-    method: "sendMessage(/kostroma)",
-    chat_id: req.message.chat.id,
-    text: " Exact time:\n" + "Kostroma: " + kst.toLocaleString(),
-    parse_mode: "HTML"
-  };
+
+  bot.onText(/\/kostroma/, (msg, match) => {
+  const chatId = msg.chat.id;
+  bot.sendMessage(chatId, 'test');
+  });
+
+//  var payload = {
+//    method: "sendMessage",
+//    chat_id: req.message.chat.id,
+//    text: " Exact time:\n" + "Kostroma: " + kst.toLocaleString(),
+//    parse_mode: "HTML"
+//  };
 //  var payload = {
 //    method: "sendMessage",
 //    chat_id: req.message.chat.id,
