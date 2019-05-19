@@ -12,11 +12,11 @@ exports.handler = function(event, context, callback) {
     text: " Exact time:\n" + "Kostroma: " + kst.toLocaleString(),
     parse_mode: "HTML"
   };
-  var payload = {
-    method: "sendMessage",
-    chat_id: req.message.text("/sanfran"),
-    text: " Exact time:\n" + "San Francisco: " + sf.toLocaleString(),
-    parse_mode: "HTML"
+//  var payload = {
+//    method: "sendMessage",
+//    chat_id: req.message.chat.id,
+//    text: " Exact time:\n" + "San Francisco: " + sf.toLocaleString(),
+//    parse_mode: "HTML"
   };
   callback(null, {
     statusCode: 200,
