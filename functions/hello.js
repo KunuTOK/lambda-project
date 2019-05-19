@@ -8,14 +8,14 @@ exports.handler = function(event, context, callback) {
   y = new Date(sf);
   var payload = {
     method: "sendMessage",
-    chat_id: req.message.text(/\/kostroma/),
+    chat_id: req.message.text(kostroma),
     text: " Exact time:\n" + "Kostroma: " + kst.toLocaleString(),
     parse_mode: "HTML"
   };
   var payload = {
     method: "sendMessage",
-    chat_id: req.message.text('/sanfran'),
-    text: " Exact time:\n" + "San Francisco: " + sf y.toLocaleString(),
+    chat_id: req.message.text(/\/sanfran/),
+    text: " Exact time:\n" + "San Francisco: " + sf.toLocaleString(),
     parse_mode: "HTML"
   };
   callback(null, {
