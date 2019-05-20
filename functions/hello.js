@@ -1,33 +1,30 @@
 exports.handler = function(event, context, callback) {
 
   const req = JSON.parse(event.body);
-  console.log(req.message.text);
+ //console.log(req.message.text);
   var kst = new Date().toLocaleString("en-US", {timeZone: "Europe/Moscow"});
   kst = new Date(kst);
   var sf = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
   y = new Date(sf);
 
-//  bot.onText(/\/kostroma/, (msg, match) => {
-//  const chatId = msg.chat.id;
-//  bot.sendMessage(chatId, 'test');
-//  });
-
-  var payload = {
+  var kostroma = {
     method: "sendMessage",
     chat_id: req.message.chat.id,
-    message_text: "kostroma",
     text: " Exact time:\n" + "Kostroma: " + kst.toLocaleString(),
     parse_mode: "HTML"
-   };
+  };
+
 //  var payload = {
 //    method: "sendMessage",
 //    chat_id: req.message.chat.id,
 //    text: " Exact time:\n" + "San Francisco: " + sf.toLocaleString(),
 //    parse_mode: "HTML"
 //  };
-  callback(null, {
+
+
+  callback(null,  {
     statusCode: 200,
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload)
+    body: JSON.stringify(kostroma)
   });
 };
