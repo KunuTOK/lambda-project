@@ -16,8 +16,14 @@ exports.handler = function (event, context, callback) {
         parse_mode: "HTML"
     };
 
-    if (req.message.text === /\/Kostroma/) {
+    if (req.message.text === "/kostroma@Guardiantimebot") {
         payload.text = " Exact time:\n" + "Kostroma: " + kst.toLocaleString();
+    }
+    else if (req.message.text === "/sanfran@Guardiantimebot"){
+      payload.text
+    }
+    else if (req.message.text = ""){
+      "my command /kostroma, /sanfran"
     }
 
     callback(null, {
