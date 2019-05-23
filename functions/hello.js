@@ -9,8 +9,6 @@ console.log(req.message.text);
   var sf = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
   sf = new Date(sf);
 
-var kostromaTime = " Exact time:\n" + "Kostroma: " + kst.toLocaleString()
-
   var payload = {
      method: "sendMessage",
      chat_id: req.message.chat.id,
@@ -19,7 +17,7 @@ var kostromaTime = " Exact time:\n" + "Kostroma: " + kst.toLocaleString()
    };
 
    if (req.message.text === "/Kostroma") {
-     payload.text = kostromaTime
+     payload = kostroma
    }
 
    callback(null,  {
@@ -27,7 +25,6 @@ var kostromaTime = " Exact time:\n" + "Kostroma: " + kst.toLocaleString()
      headers: { "Content-Type": "application/json" },
      body: JSON.stringify(payload)
    });
-
 
 //  var kostroma = {
 //    method: "sendMessage",
